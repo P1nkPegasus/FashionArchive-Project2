@@ -38,8 +38,9 @@ import java.util.Optional;
     }
 
     @PostMapping("/designers/")
-    public String createDesigner(@RequestBody String body) {
-        return "creating a designer " + body;
+    public Designer createDesigner(@RequestBody Designer designerObject) {
+        System.out.println("calling createDesigner...");
+        return designerService.createDesigner(designerObject);
     }
 
     @PutMapping("/designers/{designerId}")
