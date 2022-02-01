@@ -20,8 +20,6 @@ import java.util.List;
         this.designerService = designerService;
     }
 
-
-
     @GetMapping(path = "/hello-world/")
     public String getHelloWorld(){
         return "hello world";
