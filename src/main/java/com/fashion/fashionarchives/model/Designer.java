@@ -9,13 +9,13 @@ public class Designer {
     @Id
     @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer designer_Id;
+    private Long designerId;
 
     @Column
-    private String first_name;
+    private String firstName;
 
     @Column
-    private String last_name;
+    private String lastName;
 
     @Column
     private String location;
@@ -23,10 +23,10 @@ public class Designer {
     @Column
     private String website;
 
-    public Designer(Integer designer_Id, String first_name, String last_name, String location, String website) {
-        this.designer_Id = designer_Id;
-        this.first_name = first_name;
-        this.last_name = last_name;
+    public Designer(Long designerId, String firstName, String lastName, String location, String website) {
+        this.designerId = designerId;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.location = location;
         this.website = website;
     }
@@ -34,28 +34,28 @@ public class Designer {
     public Designer() {
     }
 
-    public Integer getDesigner_Id() {
-        return designer_Id;
+    public Long getDesignerId() {
+        return designerId;
     }
 
-    public void setDesigner_Id(Integer designer_Id) {
-        this.designer_Id = designer_Id;
+    public void setDesignerId(Long designerId) {
+        this.designerId = designerId;
     }
 
-    public String getFirst_name() {
-        return first_name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFirst_name(String first_name) {
-        this.first_name = first_name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getLast_name() {
-        return last_name;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setLast_name(String last_name) {
-        this.last_name = last_name;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getLocation() {
