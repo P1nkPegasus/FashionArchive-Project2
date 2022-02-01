@@ -67,5 +67,16 @@ public class DesignerService {
         }
     }
 
+    public Optional<Designer> deleteDesigner(Long designerId) {
+        System.out.println("service calling deleteDesigner...");
+        Optional<Designer> designer = designerRepository.findById(designerId);
+
+        if (designer.isPresent()) {
+            designerRepository.deleteById(designerId);
+            return designer;
+        } else {
+            throw new InformationNotFoundException("category with id " + designerId + " not found");
+        }
+    }
 
 }
