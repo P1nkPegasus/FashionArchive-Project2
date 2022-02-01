@@ -50,8 +50,9 @@ import java.util.Optional;
     }
 
     @DeleteMapping("/designers/{designerId}")
-    public String deleteDesigner(@PathVariable(value = "designerId") Long designerId) {
-        return "deleting the designer with the id of " + designerId;
+    public Optional<Designer> deleteDesigner(@PathVariable(value = "designerId") Long designerId) {
+        System.out.println("calling deleteDesigner...");
+        return designerService.deleteDesigner(designerId);
     }
 
     }

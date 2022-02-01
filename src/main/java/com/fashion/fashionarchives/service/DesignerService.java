@@ -1,10 +1,9 @@
 package com.fashion.fashionarchives.service;
 
-//import com.fashion.fashionarchives.repository.DesignerRepository;
+import com.fashion.fashionarchives.repository.DesignerRepository;
 import com.fashion.fashionarchives.exceptions.InformationExistException;
 import com.fashion.fashionarchives.exceptions.InformationNotFoundException;
 import com.fashion.fashionarchives.model.Designer;
-import com.fashion.fashionarchives.repository.DesignerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,13 +20,13 @@ public class DesignerService {
     }
 
     public List<Designer> getAllDesigners() {
-            System.out.println("calling getAllDesigners...");
+            System.out.println("service calling getAllDesigners...");
             return designerRepository.findAll();
         }
 
 
     public Optional getDesigner(Long designerId) {
-        System.out.println("service getCategory...");
+        System.out.println("service calling getCategory...");
         Optional designer = designerRepository.findById(designerId);
         if (designer.isPresent()) {
             return designer;
