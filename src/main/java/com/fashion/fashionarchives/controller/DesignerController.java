@@ -32,14 +32,14 @@ import org.springframework.web.bind.annotation.*;
     }
 
 
-    @GetMapping(path = "/categories/{categoryId}")
+    @GetMapping(path = "/designers/{designerId}")
     public String getDesigner(@PathVariable Long designerId) {
-        return "getting the category with the id of " + categoryId;
+        return "getting the designer with the id of " + designerId;
     }
 
-    @PostMapping("/categories/")
-    public String createCategory(@RequestBody String body) {
-        return "creating a category " + body;
+    @PostMapping("/designers/")
+    public String createDesigner(@RequestBody String body) {
+        return "creating a designer " + body;
     }
 
     @PutMapping("/categories/{categoryId}")
