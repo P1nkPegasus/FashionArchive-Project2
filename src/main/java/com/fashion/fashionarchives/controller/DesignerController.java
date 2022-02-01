@@ -1,16 +1,13 @@
 package com.fashion.fashionarchives.controller;
 
-import com.fashion.fashionarchives.model.Designer;
 import com.fashion.fashionarchives.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 
 @RestController
     @RequestMapping(path = "/api")
-    public class CategoryController {
+    public class DesignerController {
 
 
         private CategoryService categoryService;
@@ -33,6 +30,8 @@ import java.util.List;
             return "calling getAllDesigners";
 //        return categoryService.getAllDesigners();
     }
+
+
 
     }
 
