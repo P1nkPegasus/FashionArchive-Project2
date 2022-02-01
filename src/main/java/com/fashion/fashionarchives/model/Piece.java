@@ -10,7 +10,7 @@ public class Piece {
     @Id
     @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer piece_id;
+    private Long pieceId;
 
     @Column
     private String color;
@@ -21,8 +21,8 @@ public class Piece {
     @Column
     private String type;
 
-    public Piece(Integer piece_id, String color, String textiles, String type) {
-        this.piece_id = piece_id;
+    public Piece(Long pieceId, String color, String textiles, String type) {
+        this.pieceId = pieceId;
         this.color = color;
         this.textiles = textiles;
         this.type = type;
@@ -31,12 +31,12 @@ public class Piece {
     public Piece() {
     }
 
-    public Integer getPiece_id() {
-        return piece_id;
+    public Long getPieceId() {
+        return pieceId;
     }
 
-    public void setPiece_id(Integer piece_id) {
-        this.piece_id = piece_id;
+    public void setPieceId(Long pieceId) {
+        this.pieceId = pieceId;
     }
 
     public String getColor() {
