@@ -9,49 +9,49 @@ public class Season {
     @Id
     @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer season_id;
+    private Long seasonId;
 
     @Column
-    private String season_name;
+    private String name;
 
     @Column
-    private String season_year;
+    private String year;
 
     @Column
     private String category;
 
-    public Season(Integer season_id, String season_name, String season_year, String category) {
-        this.season_id = season_id;
-        this.season_name = season_name;
-        this.season_year = season_year;
+    public Season(Long seasonId, String name, String year, String category) {
+        this.seasonId = seasonId;
+        this.name = name;
+        this.year = year;
         this.category = category;
     }
 
     public Season() {
     }
 
-    public Integer getSeason_id() {
-        return season_id;
+    public Long getSeasonId() {
+        return seasonId;
     }
 
-    public void setSeason_id(Integer season_id) {
-        this.season_id = season_id;
+    public void setSeasonId(Long seasonId) {
+        this.seasonId = seasonId;
     }
 
-    public String getSeason_name() {
-        return season_name;
+    public String getName() {
+        return name;
     }
 
-    public void setSeason_name(String season_name) {
-        this.season_name = season_name;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getSeason_year() {
-        return season_year;
+    public String getYear() {
+        return year;
     }
 
-    public void setSeason_year(String season_year) {
-        this.season_year = season_year;
+    public void setYear(String year) {
+        this.year = year;
     }
 
     public String getCategory() {
