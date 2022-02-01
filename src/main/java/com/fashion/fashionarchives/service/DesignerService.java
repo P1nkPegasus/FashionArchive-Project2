@@ -1,6 +1,7 @@
 package com.fashion.fashionarchives.service;
 
 //import com.fashion.fashionarchives.repository.DesignerRepository;
+import com.fashion.fashionarchives.exceptions.InformationExistException;
 import com.fashion.fashionarchives.exceptions.InformationNotFoundException;
 import com.fashion.fashionarchives.model.Designer;
 import com.fashion.fashionarchives.repository.DesignerRepository;
@@ -32,6 +33,17 @@ public class DesignerService {
             return designer;
         } else {
             throw new InformationNotFoundException("designer with id " + designerId + " not found");
+        }
+    }
+
+    public Designer createDesigner(Designer designerObject) {
+        System.out.println("service calling createDesigner...");
+
+       Designer designer = designerRepository.findByName(designerObject.getFirstName());
+        if (designer != null) {
+            throw new InformationExistException("designer with name " + designer.getFirstName() + " already exists");
+        } else {
+            return designerRepository.save(designerObject);
         }
     }
 
