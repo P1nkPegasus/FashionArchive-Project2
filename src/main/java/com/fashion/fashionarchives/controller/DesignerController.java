@@ -1,6 +1,6 @@
 package com.fashion.fashionarchives.controller;
 
-import com.fashion.fashionarchives.service.CategoryService;
+import com.fashion.fashionarchives.service.DesignerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,11 +10,11 @@ import org.springframework.web.bind.annotation.*;
     public class DesignerController {
 
 
-        private CategoryService categoryService;
+        private DesignerService designerService;
 
     @Autowired
-    public void setCategoryService (CategoryService categoryService) {
-        this.categoryService = categoryService;
+    public void setDesignerService (DesignerService designerService) {
+        this.designerService = designerService;
     }
 
 
@@ -28,7 +28,7 @@ import org.springframework.web.bind.annotation.*;
 //    public List<Designer> getAllDesigners(){
         public String getAllDesigners(){
             return "calling getAllDesigners";
-//        return categoryService.getAllDesigners();
+//        return DesignerService.getAllDesigners();
     }
 
 
