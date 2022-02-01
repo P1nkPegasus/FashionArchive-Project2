@@ -47,4 +47,25 @@ public class DesignerService {
         }
     }
 
+    public Designer updateDesigner(Long designerId, Designer designerObject) {
+        System.out.println("service calling updateDesigner...");
+        Optional<Designer> designer = designerRepository.findById(designerId);
+        if (designer.isPresent()) {
+            if (designerObject.getFirstName().equals(designer.get().getFirstName())) {
+                System.out.println("Same");
+                throw new InformationExistException("designer " + designer.get().getFirstName() + " is already exists");
+            } else {
+                Designer updateDesigner = designerRepository.findById(designerId).get();
+                updateDesigner.setFirstName(designerObject.getFirstName());
+                updateDesigner.setLastName(designerObject.getLastName());
+                updateDesigner.setLocation(designerObject.getLocation());
+                updateDesigner.setWebsite(designerObject.getWebsite());
+                return designerRepository.save(updateDesigner);
+            }
+        } else {
+            throw new InformationNotFoundException("designer with id " + designerId + " not found");
+        }
+    }
+
+
 }
