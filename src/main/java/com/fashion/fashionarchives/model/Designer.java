@@ -1,11 +1,26 @@
 package com.fashion.fashionarchives.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "designer")
 public class Designer {
 
+    @Id
+    @Column
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer designer_Id;
+
+    @Column
     private String first_name;
+
+    @Column
     private String last_name;
+
+    @Column
     private String location;
+
+    @Column
     private String website;
 
     public Designer(Integer designer_Id, String first_name, String last_name, String location, String website) {

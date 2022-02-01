@@ -1,9 +1,20 @@
 package com.fashion.fashionarchives.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "company")
 public class Company {
 
+    @Id
+    @Column
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer company_id;
+
+    @Column
     private String company_name;
+
+    @Column
     private String website;
 
     public Company(Integer company_id, String company_name, String website) {

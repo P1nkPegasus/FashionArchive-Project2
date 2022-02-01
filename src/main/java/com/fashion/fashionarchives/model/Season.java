@@ -1,10 +1,23 @@
 package com.fashion.fashionarchives.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "season")
 public class Season {
 
+    @Id
+    @Column
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer season_id;
+
+    @Column
     private String season_name;
+
+    @Column
     private String season_year;
+
+    @Column
     private String category;
 
     public Season(Integer season_id, String season_name, String season_year, String category) {

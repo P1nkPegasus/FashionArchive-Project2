@@ -1,10 +1,24 @@
 package com.fashion.fashionarchives.model;
 
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "piece")
 public class Piece {
 
+    @Id
+    @Column
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer piece_id;
+
+    @Column
     private String color;
+
+    @Column
     private String textiles;
+
+    @Column
     private String type;
 
     public Piece(Integer piece_id, String color, String textiles, String type) {
