@@ -3,6 +3,6 @@ package com.fashion.fashionarchives.repository;
 import com.fashion.fashionarchives.model.Designer;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-//public interface DesignerRepository extends JpaRepository<Designer, Long> {
-//    Designer findByName(String designerName);
-//}
+public interface DesignerRepository extends JpaRepository<Designer, Long> {
+    Designer findByName(String designerFirstName);
+}

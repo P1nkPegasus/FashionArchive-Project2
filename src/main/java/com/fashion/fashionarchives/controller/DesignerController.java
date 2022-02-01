@@ -1,8 +1,11 @@
 package com.fashion.fashionarchives.controller;
 
+import com.fashion.fashionarchives.model.Designer;
 import com.fashion.fashionarchives.service.DesignerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 
 @RestController
@@ -25,10 +28,9 @@ import org.springframework.web.bind.annotation.*;
     }
 
     @GetMapping("/designers/")
-//    public List<Designer> getAllDesigners(){
-        public String getAllDesigners(){
-            return "calling getAllDesigners";
-//        return DesignerService.getAllDesigners();
+    public List<Designer> getAllDesigners(){
+        System.out.println("calling getAllDesigners...");
+        return designerService.getAllDesigners();
     }
 
     @GetMapping(path = "/designers/{designerId}")
