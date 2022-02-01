@@ -42,9 +42,9 @@ import org.springframework.web.bind.annotation.*;
         return "creating a designer " + body;
     }
 
-    @PutMapping("/categories/{categoryId}")
-    public String updateCategory(@PathVariable(value = "categoryId") Long categoryId, @RequestBody String body) {
-        return "updating the category with the id of " + categoryId + body;
+    @PutMapping("/designers/{designerId}")
+    public String updateDesigner(@PathVariable(value = "designerId") Long designerId, @RequestBody String body) {
+        return "updating the designer with the id of " + designerId + body;
     }
 
     @DeleteMapping("/categories/{categoryId}")
