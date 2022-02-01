@@ -1,6 +1,8 @@
 package com.fashion.fashionarchives.controller;
 
+import com.fashion.fashionarchives.model.Designer;
 import com.fashion.fashionarchives.service.CategoryService;
+import jdk.jfr.Category;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,7 +29,11 @@ import java.util.Optional;
         return "hello world";
     }
 
-
+    @GetMapping("/designers/")
+    public List<Designer> getAllDesigners(){
+        System.out.println("calling getAllDesigners");
+        return categoryService.getAllDesigners();
+    }
 
     }
 
