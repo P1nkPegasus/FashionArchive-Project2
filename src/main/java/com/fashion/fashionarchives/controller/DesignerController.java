@@ -47,9 +47,9 @@ import org.springframework.web.bind.annotation.*;
         return "updating the designer with the id of " + designerId + body;
     }
 
-    @DeleteMapping("/categories/{categoryId}")
-    public String deleteCategory(@PathVariable(value = "categoryId") Long categoryId) {
-        return "deleting the category with the id of " + categoryId;
+    @DeleteMapping("/designers/{designerId}")
+    public String deleteDesigner(@PathVariable(value = "designerId") Long designerId) {
+        return "deleting the designer with the id of " + designerId;
     }
 
     }
