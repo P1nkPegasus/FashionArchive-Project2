@@ -12,14 +12,14 @@ public class Company {
     private Long companyId;
 
     @Column
-    private String companyName;
+    private String name;
 
     @Column
     private String website;
 
-    public Company(Long companyId, String companyName, String website) {
+    public Company(Long companyId, String name, String website) {
         this.companyId = companyId;
-        this.companyName = companyName;
+        this.name = name;
         this.website = website;
     }
 
@@ -34,12 +34,12 @@ public class Company {
         this.companyId = companyId;
     }
 
-    public String getCompanyName() {
-        return companyName;
+    public String getName() {
+        return name;
     }
 
-    public void setCompanyName(String companyName) {
-        this.companyName = companyName;
+    public void setName(String companyName) {
+        this.name = name;
     }
 
     public String getWebsite() {
