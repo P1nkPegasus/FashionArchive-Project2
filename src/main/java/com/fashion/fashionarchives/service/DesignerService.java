@@ -38,7 +38,7 @@ public class DesignerService {
     public Designer createDesigner(Designer designerObject) {
         System.out.println("service calling createDesigner...");
 
-       Designer designer = designerRepository.findByName(designerObject.getFirstName());
+       Designer designer = designerRepository.findByFirstName(designerObject.getFirstName());
         if (designer != null) {
             throw new InformationExistException("designer with name " + designer.getFirstName() + " already exists");
         } else {
