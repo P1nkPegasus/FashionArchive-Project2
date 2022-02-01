@@ -73,4 +73,15 @@ public class Designer {
     public void setWebsite(String website) {
         this.website = website;
     }
+
+    @Override
+    public String toString() {
+        return "Designer{" +
+                "designerId=" + designerId +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", location='" + location + '\'' +
+                ", website='" + website + '\'' +
+                '}';
+    }
 }

@@ -31,7 +31,6 @@ import org.springframework.web.bind.annotation.*;
 //        return DesignerService.getAllDesigners();
     }
 
-
     @GetMapping(path = "/designers/{designerId}")
     public String getDesigner(@PathVariable Long designerId) {
         return "getting the designer with the id of " + designerId;
