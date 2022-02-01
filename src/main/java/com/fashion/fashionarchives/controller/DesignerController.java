@@ -44,8 +44,9 @@ import java.util.Optional;
     }
 
     @PutMapping("/designers/{designerId}")
-    public String updateDesigner(@PathVariable(value = "designerId") Long designerId, @RequestBody String body) {
-        return "updating the designer with the id of " + designerId + body;
+    public Designer updateDesigner(@PathVariable(value = "designerId") Long designerId, @RequestBody Designer designerObject) {
+        System.out.println("calling updateDesigner...");
+        return designerService.updateDesigner(designerId, designerObject);
     }
 
     @DeleteMapping("/designers/{designerId}")
