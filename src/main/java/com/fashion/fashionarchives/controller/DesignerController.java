@@ -6,12 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @RestController
     @RequestMapping(path = "/api")
     public class DesignerController {
-
 
         private DesignerService designerService;
 
@@ -32,8 +32,9 @@ import java.util.List;
     }
 
     @GetMapping(path = "/designers/{designerId}")
-    public String getDesigner(@PathVariable Long designerId) {
-        return "getting the designer with the id of " + designerId;
+    public Optional getDesigner(@PathVariable Long designerId) {
+        System.out.println("calling getDesigner...");
+        return designerService.getDesigner(designerId);
     }
 
     @PostMapping("/designers/")
