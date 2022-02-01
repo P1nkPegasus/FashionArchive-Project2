@@ -9,37 +9,37 @@ public class Company {
     @Id
     @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer company_id;
+    private Long companyId;
 
     @Column
-    private String company_name;
+    private String companyName;
 
     @Column
     private String website;
 
-    public Company(Integer company_id, String company_name, String website) {
-        this.company_id = company_id;
-        this.company_name = company_name;
+    public Company(Long companyId, String companyName, String website) {
+        this.companyId = companyId;
+        this.companyName = companyName;
         this.website = website;
     }
 
     public Company() {
     }
 
-    public Integer getCompany_id() {
-        return company_id;
+    public Long getCompanyId() {
+        return companyId;
     }
 
-    public void setCompany_id(Integer company_id) {
-        this.company_id = company_id;
+    public void setCompanyId(Long companyId) {
+        this.companyId = companyId;
     }
 
-    public String getCompany_name() {
-        return company_name;
+    public String getCompanyName() {
+        return companyName;
     }
 
-    public void setCompany_name(String company_name) {
-        this.company_name = company_name;
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
     }
 
     public String getWebsite() {
