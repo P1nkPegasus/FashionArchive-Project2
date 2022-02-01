@@ -1,6 +1,6 @@
 package com.fashion.fashionarchives.service;
 
-//import com.fashion.fashionarchives.repository.CategoryRepository;
+//import com.fashion.fashionarchives.repository.DesignerRepository;
 import com.fashion.fashionarchives.exceptions.InformationNotFoundException;
 import com.fashion.fashionarchives.model.Designer;
 import jdk.jfr.Category;
