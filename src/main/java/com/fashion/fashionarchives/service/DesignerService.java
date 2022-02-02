@@ -94,4 +94,11 @@ public class DesignerService {
     }
 
 
+    public Designer createDesignerCompany(Long designerId, Designer designerObject) {
+        System.out.println("service calling createDesignerCompany...");
+
+        Optional<Designer> designer = designerRepository.findById(designerId);
+        designerObject.setDesigner(designer.get());
+        return designerRepository.save(designerObject);
+    }
 }
