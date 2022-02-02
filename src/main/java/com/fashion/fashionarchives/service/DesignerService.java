@@ -33,18 +33,16 @@ public class DesignerService {
 
 
 
-
-
-
     public List<Designer> getAllDesigners() {
             System.out.println("service calling getAllDesigners...");
             return designerRepository.findAll();
         }
 
 
-    public Optional getDesigner(Long designerId) {
+    public Optional<Designer> getDesigner(Long designerId) {
         System.out.println("service calling getCategory...");
-        Optional designer = designerRepository.findById(designerId);
+
+        Optional<Designer> designer = designerRepository.findById(designerId);
         if (designer.isPresent()) {
             return designer;
         } else {
@@ -55,12 +53,8 @@ public class DesignerService {
     public Designer createDesigner(Designer designerObject) {
         System.out.println("service calling createDesigner...");
 
-       Designer designer = designerRepository.findByFirstName(designerObject.getFirstName());
-        if (designer != null) {
-            throw new InformationExistException("designer with name " + designer.getFirstName() + " already exists");
-        } else {
             return designerRepository.save(designerObject);
-        }
+            //throw exception if there is someone with a similar name
     }
 
     public Designer updateDesigner(Long designerId, Designer designerObject) {
@@ -117,17 +111,5 @@ public class DesignerService {
         companyObject.setDesigner(designer.get());
         return companyRepository.save(companyObject);
     }
-
-
-//
-//    public Designer createDesigner(Designer designerObject) {
-//        System.out.println("service calling createDesigner...");
-//
-//        Designer designer = designerRepository.findByFirstName(designerObject.getFirstName());
-//        if (designer != null) {
-//            throw new InformationExistException("designer with name " + designer.getFirstName() + " already exists");
-//        } else {
-//            return designerRepository.save(designerObject);
-//        }
-//    }
+    
 }

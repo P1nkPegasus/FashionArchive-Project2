@@ -9,7 +9,7 @@ import java.util.List;
 @Repository
 public interface CompanyRepository extends JpaRepository<Company, Long> {
 //    List<Company> findByDesignerFirstName(Long companyId);
-List<Company> findByDesignerId(Long companyId);
+//List<Company> findByDesignerId(Long companyId);
 
 
 }
