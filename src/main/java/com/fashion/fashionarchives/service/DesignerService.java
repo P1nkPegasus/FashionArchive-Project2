@@ -1,6 +1,7 @@
 package com.fashion.fashionarchives.service;
 
 import com.fashion.fashionarchives.model.Company;
+import com.fashion.fashionarchives.repository.CompanyRepository;
 import com.fashion.fashionarchives.repository.DesignerRepository;
 import com.fashion.fashionarchives.exceptions.InformationExistException;
 import com.fashion.fashionarchives.exceptions.InformationNotFoundException;
@@ -10,15 +11,30 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Properties;
 
 @Service //talks to designer repo
 public class DesignerService {
+
     private DesignerRepository designerRepository;
 
     @Autowired
     public void setDesignerRepository(DesignerRepository designerRepository) {
         this.designerRepository = designerRepository;
     }
+
+
+    private CompanyRepository companyRepository;
+
+    @Autowired
+    public void setCompanyRepository(CompanyRepository companyRepository) {
+        this.companyRepository = companyRepository;
+    }
+
+
+
+
+
 
     public List<Designer> getAllDesigners() {
             System.out.println("service calling getAllDesigners...");

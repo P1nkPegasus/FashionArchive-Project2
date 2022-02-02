@@ -57,4 +57,7 @@ public class Company {
     public void setWebsite(String website) {
         this.website = website;
     }
+
+    public void setDesigner(Designer designer) {
+    }
 }
