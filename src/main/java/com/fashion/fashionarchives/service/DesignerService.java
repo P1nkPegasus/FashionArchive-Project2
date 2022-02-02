@@ -52,7 +52,7 @@ public class DesignerService {
         if (designer.isPresent()) {
             if (designerObject.getFirstName().equals(designer.get().getFirstName())) {
                 System.out.println("Same");
-                throw new InformationExistException("designer " + designer.get().getFirstName() + " is already exists");
+                throw new InformationExistException("designer " + designer.get().getFirstName() + "  already exists");
             } else {
                 Designer updateDesigner = designerRepository.findById(designerId).get();
                 updateDesigner.setFirstName(designerObject.getFirstName());
@@ -74,7 +74,7 @@ public class DesignerService {
             designerRepository.deleteById(designerId);
             return designer;
         } else {
-            throw new InformationNotFoundException("category with id " + designerId + " not found");
+            throw new InformationNotFoundException("designer with id " + designerId + " not found");
         }
     }
 
