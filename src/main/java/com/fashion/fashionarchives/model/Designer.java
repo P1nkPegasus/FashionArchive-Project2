@@ -10,7 +10,7 @@ public class Designer {
     @Id
     @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long designerId;
+    private Long id;
 
     @Column
     private String firstName;
@@ -27,8 +27,8 @@ public class Designer {
     @OneToMany(mappedBy = "designer")
     private List<Company> companyList;
 
-    public Designer(Long designerId, String firstName, String lastName, String location, String website) {
-        this.designerId = designerId;
+    public Designer(Long id, String firstName, String lastName, String location, String website) {
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.location = location;
@@ -38,12 +38,12 @@ public class Designer {
     public Designer() {
     }
 
-    public Long getDesignerId() {
-        return designerId;
+    public Long getId() {
+        return id;
     }
 
-    public void setDesignerId(Long designerId) {
-        this.designerId = designerId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getFirstName() {
@@ -81,7 +81,7 @@ public class Designer {
     @Override
     public String toString() {
         return "Designer{" +
-                "designerId=" + designerId +
+                "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", location='" + location + '\'' +
