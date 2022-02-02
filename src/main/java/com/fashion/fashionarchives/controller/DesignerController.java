@@ -58,6 +58,7 @@ import java.util.Optional;
 ////////COMPANY
     @GetMapping ("/designers/{designerId}/companies")
     public List <Company> getAllDesignerCompany(@PathVariable(value = "designerId")Long designerId){
+        System.out.println("calling getAllDesignerCompany...");
         return designerService.getAllDesignerCompany(designerId);
     }
 

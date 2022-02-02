@@ -82,6 +82,8 @@ public class DesignerService {
 
     ////////COMPANY
     public List<Company> getAllDesignerCompany(Long designerId) {
+        System.out.println("service calling getAllDesignerCompany...");
+
         Optional<Designer> designer = designerRepository.findById(designerId);
             if (designer.isPresent()) {
                 return designer.get().getCompanyList();

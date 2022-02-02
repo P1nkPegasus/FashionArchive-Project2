@@ -21,7 +21,7 @@ public class Company {
 
     @JsonIgnore
     @ManyToOne
-    @JoinColumn(name = "designerid") // creating foreign key
+    @JoinColumn(name = "designerId") // creating foreign key
 
     private Designer designer;
 
