@@ -1,5 +1,7 @@
 package com.fashion.fashionarchives.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 @Entity
@@ -17,13 +19,19 @@ public class Company {
     @Column
     private String website;
 
+    @JsonIgnore
+    @ManyToOne
+    @JoinColumn(name = "designerid") // creating foreign key
+
+    private Designer designer;
+
+    public Company() {
+    }
+
     public Company(Long companyId, String name, String website) {
         this.companyId = companyId;
         this.name = name;
         this.website = website;
-    }
-
-    public Company() {
     }
 
     public Long getCompanyId() {
