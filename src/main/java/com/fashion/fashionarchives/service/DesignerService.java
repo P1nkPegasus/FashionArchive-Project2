@@ -117,4 +117,17 @@ public class DesignerService {
         companyObject.setDesigner(designer.get());
         return companyRepository.save(companyObject);
     }
+
+
+//
+//    public Designer createDesigner(Designer designerObject) {
+//        System.out.println("service calling createDesigner...");
+//
+//        Designer designer = designerRepository.findByFirstName(designerObject.getFirstName());
+//        if (designer != null) {
+//            throw new InformationExistException("designer with name " + designer.getFirstName() + " already exists");
+//        } else {
+//            return designerRepository.save(designerObject);
+//        }
+//    }
 }

@@ -11,13 +11,22 @@ public class Company {
     @Id
     @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long companyId;
+    private Long id;
 
     @Column
     private String name;
 
     @Column
     private String website;
+
+    public Designer getDesigner() {
+        return designer;
+    }
+
+
+    public void setDesigner(Designer designer) {
+        this.designer = designer;
+    }
 
     @JsonIgnore
     @ManyToOne
@@ -28,18 +37,18 @@ public class Company {
     public Company() {
     }
 
-    public Company(Long companyId, String name, String website) {
-        this.companyId = companyId;
+    public Company(Long id, String name, String website) {
+        this.id = id;
         this.name = name;
         this.website = website;
     }
 
-    public Long getCompanyId() {
-        return companyId;
+    public Long getId() {
+        return id;
     }
 
-    public void setCompanyId(Long companyId) {
-        this.companyId = companyId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -58,6 +67,13 @@ public class Company {
         this.website = website;
     }
 
-    public void setDesigner(Designer designer) {
+    @Override
+    public String toString() {
+        return "Company{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", website='" + website + '\'' +
+                ", designer=" + designer +
+                '}';
     }
 }
