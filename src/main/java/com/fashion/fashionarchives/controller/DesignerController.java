@@ -63,10 +63,10 @@ import java.util.Optional;
     }
 
     @PostMapping("/designers/{designerId}/companies")
-    public Designer createDesignerCompany(@PathVariable(value = "designerId") Long designerId, @RequestBody Designer designerObject) {
+    public Company createDesignerCompany(@PathVariable(value = "designerId") Long designerId, @RequestBody Company companyObject) {
         System.out.println("calling createDesignerCompany");
 
-        return designerService.createDesignerCompany(designerId, designerObject);
+        return designerService.createDesignerCompany(designerId, companyObject);
     }
 
 
