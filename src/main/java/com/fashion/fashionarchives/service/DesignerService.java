@@ -94,11 +94,11 @@ public class DesignerService {
     }
 
 
-    public Designer createDesignerCompany(Long designerId, Designer designerObject) {
+    public Company createDesignerCompany(Long designerId, Company companyObject) {
         System.out.println("service calling createDesignerCompany...");
 
         Optional<Designer> designer = designerRepository.findById(designerId);
-        designerObject.setDesigner(designer.get());
-        return designerRepository.save(designerObject);
+        companyObject.setDesigner(designer.get());
+        return companyRepository.save(companyObject);
     }
 }

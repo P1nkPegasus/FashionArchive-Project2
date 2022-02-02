@@ -96,4 +96,10 @@ public class Designer {
     public List<Company> getCompanyList() {
         return companyList;
     }
+
+
+    public void setCompanyList(List<Company> companyList) {
+        this.companyList = companyList;
+    }
+
 }
