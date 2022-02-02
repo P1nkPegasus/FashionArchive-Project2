@@ -1,5 +1,6 @@
 package com.fashion.fashionarchives.service;
 
+import com.fashion.fashionarchives.model.Company;
 import com.fashion.fashionarchives.repository.DesignerRepository;
 import com.fashion.fashionarchives.exceptions.InformationExistException;
 import com.fashion.fashionarchives.exceptions.InformationNotFoundException;
@@ -77,5 +78,18 @@ public class DesignerService {
             throw new InformationNotFoundException("designer with id " + designerId + " not found");
         }
     }
+
+
+    ////////COMPANY
+    public List<Company> getAllDesignerCompany(Long designerId) {
+        Optional<Designer> designer = designerRepository.findById(designerId);
+            if (designer.isPresent()) {
+                return designer.get().getCompanyList();
+            } else {
+                throw new InformationNotFoundException("designer with id " + designerId + " not found");
+            }
+
+    }
+
 
 }

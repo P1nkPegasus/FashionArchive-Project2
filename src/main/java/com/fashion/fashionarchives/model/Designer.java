@@ -1,6 +1,7 @@
 package com.fashion.fashionarchives.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "designer")
@@ -83,5 +84,8 @@ public class Designer {
                 ", location='" + location + '\'' +
                 ", website='" + website + '\'' +
                 '}';
+    }
+
+    public List<Company> getCompanyList() {
     }
 }
