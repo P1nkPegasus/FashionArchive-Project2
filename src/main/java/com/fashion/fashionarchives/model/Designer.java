@@ -24,6 +24,9 @@ public class Designer {
     @Column
     private String website;
 
+    @OneToMany(mappedBy = "designer")
+    private List<Company> companyList;
+
     public Designer(Long designerId, String firstName, String lastName, String location, String website) {
         this.designerId = designerId;
         this.firstName = firstName;
@@ -86,6 +89,11 @@ public class Designer {
                 '}';
     }
 
+
+
+
+
     public List<Company> getCompanyList() {
+        return companyList;
     }
 }
