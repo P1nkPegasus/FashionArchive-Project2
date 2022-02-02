@@ -62,7 +62,12 @@ import java.util.Optional;
         return designerService.getAllDesignerCompany(designerId);
     }
 
+    @PostMapping("/designers/{designerId}/companies")
+    public Designer createDesignerCompany(@PathVariable(value = "designerId") Long designerId, @RequestBody Designer designerObject) {
+        System.out.println("calling createDesignerCompany");
 
+        return designerService.createDesignerCompany(designerId, designerObject);
+    }
 
 
 
