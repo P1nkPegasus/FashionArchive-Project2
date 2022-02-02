@@ -1,5 +1,6 @@
 package com.fashion.fashionarchives.controller;
 
+import com.fashion.fashionarchives.model.Company;
 import com.fashion.fashionarchives.model.Designer;
 import com.fashion.fashionarchives.service.DesignerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,6 +55,15 @@ import java.util.Optional;
         System.out.println("calling deleteDesigner...");
         return designerService.deleteDesigner(designerId);
     }
+////////COMPANY
+    @GetMapping ("/designers/{designerId}/companies")
+    public List <Company> getAllDesignerCompany(@PathVariable(value = "designerId")Long designerId){
+        return designerService.getAllDesignerCompany(designerId);
+    }
+
+
+
+
 
     }
 
