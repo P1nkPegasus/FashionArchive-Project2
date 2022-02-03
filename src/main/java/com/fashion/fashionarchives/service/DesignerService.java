@@ -32,11 +32,10 @@ public class DesignerService {
     }
 
 
-
     public List<Designer> getAllDesigners() {
-            System.out.println("service calling getAllDesigners...");
-            return designerRepository.findAll();
-        }
+        System.out.println("service calling getAllDesigners...");
+        return designerRepository.findAll();
+    }
 
 
     public Optional<Designer> getDesigner(Long designerId) {
@@ -53,10 +52,14 @@ public class DesignerService {
     public Designer createDesigner(Designer designerObject) {
         System.out.println("service calling createDesigner...");
 
-            return designerRepository.save(designerObject);
-            //throw exception if there is someone with a similar name
+        Designer designer = designerRepository.findByFirstName(designerObject.getFirstName());
+        if (designer != null) {
+            throw new InformationExistException("designers with name " + designer.getFirstName() + " already exists");
+        } else {
+        return designerRepository.save(designerObject);
+        //throw exception if there is someone with a similar name
     }
-
+}
     public Designer updateDesigner(Long designerId, Designer designerObject) {
         System.out.println("service calling updateDesigner...");
         Optional<Designer> designer = designerRepository.findById(designerId);
