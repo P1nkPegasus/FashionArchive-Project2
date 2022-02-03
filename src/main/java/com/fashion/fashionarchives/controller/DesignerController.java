@@ -110,8 +110,16 @@ import java.util.Optional;
     @PostMapping ("/designers/{designerId}/pieces")
     public Piece createDesignerPiece(@PathVariable(value = "designerId") Long designerId,
                                          @RequestBody Piece pieceObject) {
-        System.out.println("calling createDesignerPiece");
+        System.out.println("calling createDesignerPiece...");
         return designerService.createDesignerPiece(designerId, pieceObject);
+    }
+
+    @PutMapping("/designers/{designerId}/pieces/{pieceId}")
+    public Piece updateDesignerPiece(@PathVariable(value = "designerId") Long designerId,
+                                         @PathVariable(value = "pieceId") Long pieceId,
+                                         @RequestBody Piece pieceObject) {
+        System.out.println("calling updateDesignerPiece...");
+        return designerService.updateDesignerPiece(designerId, pieceId, pieceObject);
     }
 
 
