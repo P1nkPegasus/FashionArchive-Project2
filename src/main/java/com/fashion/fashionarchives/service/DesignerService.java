@@ -32,6 +32,13 @@ public class DesignerService {
         this.companyRepository = companyRepository;
     }
 
+    private PieceRepository pieceRepository;
+
+    @Autowired
+    public void setPieceRepository(PieceRepository pieceRepository) {
+        this.pieceRepository = pieceRepository;
+    }
+
 
     public List<Designer> getAllDesigners() {
         System.out.println("service calling getAllDesigners...");
