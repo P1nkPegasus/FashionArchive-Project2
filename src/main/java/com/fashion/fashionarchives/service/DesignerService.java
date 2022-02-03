@@ -213,5 +213,25 @@ public class DesignerService {
         return pieceRepository.save(pieceObject);
     }
 
+    public Piece updateDesignerPiece(Long designerId, Long pieceId, Piece pieceObject){
+        System.out.println("service calling updateDesignerPiece...");
+
+        Optional<Designer> designer = designerRepository.findById(designerId);
+        if(designer.isPresent()){
+            for(Piece piece : designer.get().getPieceList()){
+                if(piece.getId() == pieceId) {
+                    piece.setColor(pieceObject.getColor());
+                    piece.setTextiles(pieceObject.getTextiles());
+                    piece.setType(pieceObject.getType());
+
+                    return pieceRepository.save(piece);
+                }
+            }
+            throw new InformationNotFoundException("piece with id " + pieceId + " not found");
+        } else{
+            throw new InformationNotFoundException("designer with id " + designerId + " not found");
+        }
+    }
+
 
 }
