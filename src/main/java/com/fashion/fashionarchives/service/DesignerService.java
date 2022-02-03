@@ -166,9 +166,19 @@ public class DesignerService {
         }
     }
 
+    ////////PIECE
+
     public List<Piece> getAllDesignerPiece(Long designerId) {
+        System.out.println("service calling getAllDesignerPiece...");
+
+        Optional<Designer> designer = designerRepository.findById(designerId);
+        if (designer.isPresent()) {
+            return designer.get().getPieceList();
+        } else {
+            throw new InformationNotFoundException("designer with id " + designerId + " not found");
+        }
     }
 
-    ////////PIECE
+
 
 }
