@@ -120,7 +120,7 @@ public class DesignerService {
         throw new InformationNotFoundException("designer with id " + designerId + " not found");
     }
 }
-
+//WORKS: NO EXCEPTION
     public Company createDesignerCompany(Long designerId, Company companyObject) {
         System.out.println("service calling createDesignerCompany...");
 
@@ -128,7 +128,7 @@ public class DesignerService {
         companyObject.setDesigner(designer.get());
         return companyRepository.save(companyObject);
     }
-////TO DO
+
     public Company updateDesignerCompany(Long designerId, Long companyId, Company companyObject) {
         System.out.println("service calling updateDesignerCompany...");
 
@@ -143,4 +143,14 @@ public class DesignerService {
         }
     }
 
+    public Company deleteDesignerCompany(Long designerId, Long companyId) {
+        try {
+            Company company = (companyRepository.findByDesignerId(
+                    designerId).stream().filter(p -> p.getId().equals(companyId)).findFirst()).get();
+            companyRepository.deleteById(company.getId());
+        } catch (InformationNotFoundException e) {
+            throw new InformationNotFoundException("company or designer not found");
+        }
+        return null;
+    }
 }
