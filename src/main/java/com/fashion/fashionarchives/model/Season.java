@@ -34,7 +34,7 @@ public class Season {
         return id;
     }
 
-    public void setId(Long seasonId) {
+    public void setId(Long id) {
         this.id = id;
     }
 
