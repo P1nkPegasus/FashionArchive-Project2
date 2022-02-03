@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.Properties;
 
 @Service //talks to designer repo
 public class DesignerService {
@@ -106,6 +105,22 @@ public class DesignerService {
 
     }
 
+///TO DO
+    public Company getDesignerCompany(Long designerId, Long companyId) {
+        System.out.println("service calling getDesignerCompany...");
+
+        Optional<Designer> designer = designerRepository.findById(designerId);
+        if (designer.isPresent()) {
+        for(Company company : designer.get().getCompanyList()){
+            if(company.getId() == companyId) {
+                return company;
+            }
+        }
+        throw new InformationNotFoundException("company with id " + companyId + " not found");
+    } else{
+        throw new InformationNotFoundException("designer with id " + designerId + " not found");
+    }
+}
 
     public Company createDesignerCompany(Long designerId, Company companyObject) {
         System.out.println("service calling createDesignerCompany...");
