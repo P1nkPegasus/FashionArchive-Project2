@@ -167,7 +167,6 @@ public class DesignerService {
     }
 
     ////////PIECE
-
     public List<Piece> getAllDesignerPiece(Long designerId) {
         System.out.println("service calling getAllDesignerPiece...");
 
@@ -179,6 +178,21 @@ public class DesignerService {
         }
     }
 
+    public Piece getDesignerPiece(Long designerId, Long pieceId) {
+        System.out.println("service calling getDesignerPiece...");
+
+        Optional<Designer> designer = designerRepository.findById(designerId);
+        if (designer.isPresent()) {
+            for(Piece piece : designer.get().getPieceList()){
+                if(piece.getId() == pieceId) {
+                    return piece;
+                }
+            }
+            throw new InformationNotFoundException("piece with id " + pieceId + " not found");
+        } else{
+            throw new InformationNotFoundException("designer with id " + designerId + " not found");
+        }
+    }
 
 
 }

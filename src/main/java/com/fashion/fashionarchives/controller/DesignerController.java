@@ -92,6 +92,7 @@ import java.util.Optional;
         System.out.println("calling deleteDesignerCompany");
         designerService.deleteDesignerCompany(designerId, companyId);
     }
+
     ////////PIECE
     @GetMapping("/designers/{designerId}/pieces")
     public List<Piece> getAllDesignerPiece(@PathVariable(value = "designerId") Long designerId) {
