@@ -27,6 +27,9 @@ public class Designer {
     @OneToMany(mappedBy = "designer")
     private List<Company> companyList;
 
+    @OneToMany(mappedBy = "designer")
+    private List<Piece> pieceList;
+
     public Designer(Long id, String firstName, String lastName, String location, String website) {
         this.id = id;
         this.firstName = firstName;
@@ -89,17 +92,18 @@ public class Designer {
                 '}';
     }
 
-
-
-
-
     public List<Company> getCompanyList() {
         return companyList;
     }
-
-
     public void setCompanyList(List<Company> companyList) {
         this.companyList = companyList;
+    }
+
+    public List<Piece> getPieceList() {
+        return pieceList;
+    }
+    public void setPieceList(List<Piece> pieceList) {
+        this.pieceList = pieceList;
     }
 
 }
