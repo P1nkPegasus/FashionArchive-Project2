@@ -1,6 +1,7 @@
 package com.fashion.fashionarchives.service;
 
 import com.fashion.fashionarchives.model.Company;
+import com.fashion.fashionarchives.model.Piece;
 import com.fashion.fashionarchives.repository.CompanyRepository;
 import com.fashion.fashionarchives.repository.DesignerRepository;
 import com.fashion.fashionarchives.exceptions.InformationExistException;
@@ -102,7 +103,6 @@ public class DesignerService {
             } else {
                 throw new InformationNotFoundException("designer with id " + designerId + " not found");
             }
-
     }
 
     public Company getDesignerCompany(Long designerId, Long companyId) {
@@ -120,7 +120,7 @@ public class DesignerService {
         throw new InformationNotFoundException("designer with id " + designerId + " not found");
     }
 }
-//WORKS: NO EXCEPTION
+
     public Company createDesignerCompany(Long designerId, Company companyObject) {
         System.out.println("service calling createDesignerCompany...");
 
@@ -131,20 +131,6 @@ public class DesignerService {
         companyObject.setDesigner(designer.get());
         return companyRepository.save(companyObject);
     }
-
-//    public Company updateDesignerCompany(Long designerId, Long companyId, Company companyObject) {
-//        System.out.println("service calling updateDesignerCompany...");
-//
-//        try {
-//            Company company = (companyRepository.findByDesignerId(
-//                    designerId).stream().filter(p -> p.getId().equals(companyId)).findFirst()).get();
-//            company.setName(companyObject.getName());
-//            company.setWebsite(companyObject.getWebsite());
-//            return companyRepository.save(company);
-//        } catch (InformationNotFoundException e) {
-//            throw new InformationNotFoundException("company: " + companyId + " or designer:" + designerId + " not found");
-//        }
-//    }
 
     public Company updateDesignerCompany(Long designerId, Long companyId, Company companyObject){
                 System.out.println("service calling updateDesignerCompany...");
@@ -180,5 +166,9 @@ public class DesignerService {
         }
     }
 
+    public List<Piece> getAllDesignerPiece(Long designerId) {
+    }
+
+    ////////PIECE
 
 }

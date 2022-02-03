@@ -2,6 +2,7 @@ package com.fashion.fashionarchives.controller;
 
 import com.fashion.fashionarchives.model.Company;
 import com.fashion.fashionarchives.model.Designer;
+import com.fashion.fashionarchives.model.Piece;
 import com.fashion.fashionarchives.service.DesignerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -91,6 +92,16 @@ import java.util.Optional;
         System.out.println("calling deleteDesignerCompany");
         designerService.deleteDesignerCompany(designerId, companyId);
     }
+    ////////PIECE
+    @GetMapping("/designers/{designerId}/pieces")
+    public List<Piece> getAllDesignerPiece(@PathVariable(value = "designerId") Long designerId) {
+        System.out.println("calling getAllDesignerPiece...");
+        return designerService.getAllDesignerPiece(designerId);
+    }
+
+
+
+
 
 }
 
