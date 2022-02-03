@@ -9,7 +9,7 @@ public class Season {
     @Id
     @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long seasonId;
+    private Long id;
 
     @Column
     private String name;
@@ -20,8 +20,8 @@ public class Season {
     @Column
     private String category;
 
-    public Season(Long seasonId, String name, String year, String category) {
-        this.seasonId = seasonId;
+    public Season(Long id, String name, String year, String category) {
+        this.id = id;
         this.name = name;
         this.year = year;
         this.category = category;
@@ -30,12 +30,12 @@ public class Season {
     public Season() {
     }
 
-    public Long getSeasonId() {
-        return seasonId;
+    public Long getId() {
+        return id;
     }
 
-    public void setSeasonId(Long seasonId) {
-        this.seasonId = seasonId;
+    public void setId(Long seasonId) {
+        this.id = id;
     }
 
     public String getName() {
