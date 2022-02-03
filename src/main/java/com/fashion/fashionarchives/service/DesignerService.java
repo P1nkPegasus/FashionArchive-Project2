@@ -146,6 +146,25 @@ public class DesignerService {
 //        }
 //    }
 
+    public Company updateDesignerCompany(Long designerId, Long companyId, Company companyObject){
+                System.out.println("service calling updateDesignerCompany...");
+
+        Optional<Designer> designer = designerRepository.findById(designerId);
+        if(designer.isPresent()){
+            for(Company company : designer.get().getCompanyList()){
+                if(company.getId() == companyId) {
+                    company.setName(companyObject.getName());
+                    company.setWebsite(companyObject.getWebsite());
+
+                    return companyRepository.save(company);
+                }
+            }
+            throw new InformationNotFoundException("company with id " + companyId + " not found");
+        } else{
+            throw new InformationNotFoundException("designer with id " + designerId + " not found");
+        }
+    }
+
     public Company deleteDesignerCompany(Long designerId, Long companyId){
         Optional<Designer> designer = designerRepository.findById(designerId);
         if(designer.isPresent()){
