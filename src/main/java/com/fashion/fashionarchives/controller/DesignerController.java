@@ -107,7 +107,12 @@ import java.util.Optional;
         return designerService.getDesignerPiece(designerId, pieceId);
     }
 
-
+    @PostMapping ("/designers/{designerId}/pieces")
+    public Piece createDesignerPiece(@PathVariable(value = "designerId") Long designerId,
+                                         @RequestBody Piece pieceObject) {
+        System.out.println("calling createDesignerPiece");
+        return designerService.createDesignerPiece(designerId, pieceObject);
+    }
 
 
 }
