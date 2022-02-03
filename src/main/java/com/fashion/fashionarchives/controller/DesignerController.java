@@ -100,6 +100,12 @@ import java.util.Optional;
         return designerService.getAllDesignerPiece(designerId);
     }
 
+    @GetMapping("/designers/{designerId}/pieces/{pieceId}")
+    public Piece getDesignerPiece(@PathVariable(value = "designerId") Long designerId,
+                                      @PathVariable(value = "pieceId") Long pieceId) {
+        System.out.println("calling getDesignerPiece...");
+        return designerService.getDesignerPiece(designerId, pieceId);
+    }
 
 
 
