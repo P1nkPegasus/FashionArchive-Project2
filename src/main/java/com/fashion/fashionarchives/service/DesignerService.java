@@ -7,6 +7,7 @@ import com.fashion.fashionarchives.repository.DesignerRepository;
 import com.fashion.fashionarchives.exceptions.InformationExistException;
 import com.fashion.fashionarchives.exceptions.InformationNotFoundException;
 import com.fashion.fashionarchives.model.Designer;
+import com.fashion.fashionarchives.repository.PieceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -192,6 +193,17 @@ public class DesignerService {
         } else{
             throw new InformationNotFoundException("designer with id " + designerId + " not found");
         }
+    }
+
+    public Piece createDesignerPiece(Long designerId, Piece pieceObject) {
+        System.out.println("service calling createDesignerPiece...");
+
+        Optional<Designer> designer = designerRepository.findById(designerId);
+        Optional<Piece> piece = pieceRepository.findByType(pieceObject.getType());
+        if(piece.isPresent())
+            throw new InformationExistException("company with name " + pieceObject.getType() + " already exists.");
+        pieceObject.setDesigner(designer.get());
+        return pieceRepository.save(pieceObject);
     }
 
 
