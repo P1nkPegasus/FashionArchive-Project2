@@ -62,7 +62,7 @@ import java.util.Optional;
         return designerService.getAllDesignerCompany(designerId);
     }
 
-    @GetMapping ("/designers/{designerId}/companies/{companyId}/")
+    @GetMapping ("/designers/{designerId}/companies/{companyId}")
     public Company getDesignerCompany(@PathVariable(value = "designerId")Long designerId, @PathVariable(value = "companyId") Long companyId){
         System.out.println("calling getAllDesignerCompany...");
         return designerService.getDesignerCompany(designerId, companyId);

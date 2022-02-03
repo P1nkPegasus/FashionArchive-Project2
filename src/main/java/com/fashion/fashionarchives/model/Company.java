@@ -55,7 +55,7 @@ public class Company {
         return name;
     }
 
-    public void setName(String companyName) {
+    public void setName(String name) {
         this.name = name;
     }
 
