@@ -14,20 +14,20 @@ import java.util.Optional;
     @RequestMapping(path = "/api")
     public class DesignerController {
 
-        private DesignerService designerService;
+    private DesignerService designerService;
 
     @Autowired
-    public void setDesignerService (DesignerService designerService) {
+    public void setDesignerService(DesignerService designerService) {
         this.designerService = designerService;
     }
 
     @GetMapping(path = "/hello-world/")
-    public String getHelloWorld(){
+    public String getHelloWorld() {
         return "hello world";
     }
 
     @GetMapping("/designers/")
-    public List<Designer> getAllDesigners(){
+    public List<Designer> getAllDesigners() {
         System.out.println("calling getAllDesigners...");
         return designerService.getAllDesigners();
     }
@@ -55,26 +55,34 @@ import java.util.Optional;
         System.out.println("calling deleteDesigner...");
         return designerService.deleteDesigner(designerId);
     }
-////////COMPANY
-    @GetMapping ("/designers/{designerId}/companies")
-    public List <Company> getAllDesignerCompany(@PathVariable(value = "designerId")Long designerId){
+
+    ////////COMPANY
+    @GetMapping("/designers/{designerId}/companies")
+    public List<Company> getAllDesignerCompany(@PathVariable(value = "designerId") Long designerId) {
         System.out.println("calling getAllDesignerCompany...");
         return designerService.getAllDesignerCompany(designerId);
     }
 
-    @GetMapping ("/designers/{designerId}/companies/{companyId}")
-    public Company getDesignerCompany(@PathVariable(value = "designerId")Long designerId, @PathVariable(value = "companyId") Long companyId){
+    @GetMapping("/designers/{designerId}/companies/{companyId}")
+    public Company getDesignerCompany(@PathVariable(value = "designerId") Long designerId,
+                                      @PathVariable(value = "companyId") Long companyId) {
         System.out.println("calling getAllDesignerCompany...");
         return designerService.getDesignerCompany(designerId, companyId);
     }
 
     @PostMapping("/designers/{designerId}/companies")
-    public Company createDesignerCompany(@PathVariable(value = "designerId") Long designerId, @RequestBody Company companyObject) {
+    public Company createDesignerCompany(@PathVariable(value = "designerId") Long designerId,
+                                         @RequestBody Company companyObject) {
         System.out.println("calling createDesignerCompany");
         return designerService.createDesignerCompany(designerId, companyObject);
     }
 
-
-
+    @PutMapping("/designers/{designerId}/companies/{companyId}")
+    public Company updateDesignerCompany(@PathVariable(value = "designerId") Long designerId,
+                                         @PathVariable(value = "companyId") Long companyId,
+                                         @RequestBody Company companyObject) {
+        return designerService.updateDesignerCompany(designerId, companyId, companyObject);
     }
+
+}
 
