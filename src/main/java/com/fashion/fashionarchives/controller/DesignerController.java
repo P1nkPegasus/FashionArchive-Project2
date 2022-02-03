@@ -77,11 +77,17 @@ import java.util.Optional;
         return designerService.createDesignerCompany(designerId, companyObject);
     }
 
-    @PutMapping("/designers/{designerId}/companies/{companyId}")
-    public Company updateDesignerCompany(@PathVariable(value = "designerId") Long designerId,
-                                         @PathVariable(value = "companyId") Long companyId,
-                                         @RequestBody Company companyObject) {
-        return designerService.updateDesignerCompany(designerId, companyId, companyObject);
+//    @PutMapping("/designers/{designerId}/companies/{companyId}")
+//    public Company updateDesignerCompany(@PathVariable(value = "designerId") Long designerId,
+//                                         @PathVariable(value = "companyId") Long companyId,
+//                                         @RequestBody Company companyObject) {
+//        return designerService.updateDesignerCompany(designerId, companyId, companyObject);
+//    }
+
+    @DeleteMapping("/designers/{designerId}/companies/{companyId}")
+    public void deleteDesignerCompany(@PathVariable(value = "designerId") Long designerId,
+                                       @PathVariable(value = "companyId") Long companyId) {
+        designerService.deleteDesignerCompany(designerId, companyId);
     }
 
 }

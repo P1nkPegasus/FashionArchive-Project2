@@ -125,32 +125,41 @@ public class DesignerService {
         System.out.println("service calling createDesignerCompany...");
 
         Optional<Designer> designer = designerRepository.findById(designerId);
+        Optional<Company> company = companyRepository.findByName(companyObject.getName());
+        if(company.isPresent())
+            throw new InformationExistException("company with name " + companyObject.getName() + " already exists.");
         companyObject.setDesigner(designer.get());
         return companyRepository.save(companyObject);
     }
 
-    public Company updateDesignerCompany(Long designerId, Long companyId, Company companyObject) {
-        System.out.println("service calling updateDesignerCompany...");
+//    public Company updateDesignerCompany(Long designerId, Long companyId, Company companyObject) {
+//        System.out.println("service calling updateDesignerCompany...");
+//
+//        try {
+//            Company company = (companyRepository.findByDesignerId(
+//                    designerId).stream().filter(p -> p.getId().equals(companyId)).findFirst()).get();
+//            company.setName(companyObject.getName());
+//            company.setWebsite(companyObject.getWebsite());
+//            return companyRepository.save(company);
+//        } catch (InformationNotFoundException e) {
+//            throw new InformationNotFoundException("company: " + companyId + " or designer:" + designerId + " not found");
+//        }
+//    }
 
-        try {
-            Company company = (companyRepository.findByDesignerId(
-                    designerId).stream().filter(p -> p.getId().equals(companyId)).findFirst()).get();
-            company.setName(companyObject.getName());
-            company.setWebsite(companyObject.getWebsite());
-            return companyRepository.save(company);
-        } catch (InformationNotFoundException e) {
-            throw new InformationNotFoundException("company: " + companyId + " or designer:" + designerId + " not found");
+    public Company deleteDesignerCompany(Long designerId, Long companyId){
+        Optional<Designer> designer = designerRepository.findById(designerId);
+        if(designer.isPresent()){
+            for(Company company : designer.get().getCompanyList()){
+                if(company.getId() == companyId) {
+                    companyRepository.deleteById(companyId);
+                    return company;
+                }
+            }
+            throw new InformationNotFoundException("company with id " + companyId + " not found");
+        } else{
+            throw new InformationNotFoundException("designer with id " + designerId + " not found");
         }
     }
 
-    public Company deleteDesignerCompany(Long designerId, Long companyId) {
-        try {
-            Company company = (companyRepository.findByDesignerId(
-                    designerId).stream().filter(p -> p.getId().equals(companyId)).findFirst()).get();
-            companyRepository.deleteById(company.getId());
-        } catch (InformationNotFoundException e) {
-            throw new InformationNotFoundException("company or designer not found");
-        }
-        return null;
-    }
+
 }
