@@ -12,6 +12,7 @@ Descriptions of any unsolved problems or major hurdles you had to overcome.
 
 ## Planning
 
+![](/Users/rookmac/Desktop/Screen Shot 2022-02-03 at 8.55.17 PM.png)
 The process of developing this application began with me pondering challenges related 
 to topics that I am passionate about. The next stage was to determine how to resolve
 the problem. I was able to picture how the app design and functionality by starting with 
@@ -38,10 +39,11 @@ while their ideas have been adopted by larger fashion houses and, in some cases,
 blackballed by the industry. Designers like Dapper Dan have produced revolutionary 
 waves in the fashion industry without being recognized for many years. He established
 a platform for black culture to be cherished and elevated via fashion, by refashioning 
-brands' designs and aesthetics for their communities. The goal of this app is to act as a
-black designers' archive for individuals wishing to engage with designers or those simply 
-intrigued by fashion. Users may use this app to identify black designers, what companies 
-they have partnered with, what pieces they have developed, and to view the different seasons.
+brands' designs and aesthetics for his community which trickled up in the industry. 
+The goal of this app is to act as a black designers' archive for individuals wishing 
+to engage with designers or those simply intrigued by fashion. Users may use this app
+to identify black designers, what companies they have partnered with, what pieces they 
+have developed, and to view the different seasons.
 
 
 ## Entity relationship diagram (ERD) Diagrams
