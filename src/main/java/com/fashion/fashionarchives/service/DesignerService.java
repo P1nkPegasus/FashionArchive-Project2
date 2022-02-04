@@ -233,5 +233,19 @@ public class DesignerService {
         }
     }
 
+    public Piece deleteDesignerPiece(Long designerId, Long pieceId){
+        Optional<Designer> designer = designerRepository.findById(designerId);
+        if(designer.isPresent()){
+            for(Piece piece : designer.get().getPieceList()){
+                if(piece.getId() == pieceId) {
+                    pieceRepository.deleteById(pieceId);
+                    return piece;
+                }
+            }
+            throw new InformationNotFoundException("piece with id " + pieceId + " not found");
+        } else{
+            throw new InformationNotFoundException("designer with id " + designerId + " not found");
+        }
+    }
 
 }
