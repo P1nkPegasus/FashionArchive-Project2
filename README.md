@@ -26,8 +26,8 @@ have developed, and to view the different seasons.
 
 
 ## Entity relationship diagram (ERD) Diagrams
-![](/Users/rookmac/sei/projects/Project2/images/FashionArchiveUpdatedERD.png)
-
+![FashionArchiveUpdatedERD.png](/Users/rookmac/sei/projects/Project2/images/FashionArchiveUpdatedERD.png)
+![FashionArchiveUpdatedERD.png](https://user-images.githubusercontent.com/77082461/152569888-fd5a1c39-81d1-4071-a429-a5bfc9a92cd8.png)
 ## Endpoints
 
 | REQUEST TYPE | URL                                             | REQUEST BODY   |
@@ -50,7 +50,7 @@ have developed, and to view the different seasons.
 
 ## Planning
 
-![](/Users/rookmac/sei/projects/Project2/images/FashionArchivePlanning.png)
+![FashionArchivePlanning.png](/Users/rookmac/sei/projects/Project2/images/FashionArchivePlanning.png)
 The process of developing this application began with me pondering challenges related 
 to topics that I am passionate about. The next stage was to determine how to resolve
 the problem. I was able to picture how the app design and functionality by starting with 
