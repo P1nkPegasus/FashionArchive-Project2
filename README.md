@@ -51,6 +51,7 @@ have developed, and to view the different seasons.
 ## Planning
 
 ![FashionArchivePlanning.png](/Users/rookmac/sei/projects/Project2/images/FashionArchivePlanning.png)
+![FashionArchivePlanning.png](https://user-images.githubusercontent.com/77082461/152570404-e8760a1e-fa00-461b-baa1-59dde1487b32.png)
 The process of developing this application began with me pondering challenges related 
 to topics that I am passionate about. The next stage was to determine how to resolve
 the problem. I was able to picture how the app design and functionality by starting with 
