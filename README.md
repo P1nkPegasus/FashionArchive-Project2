@@ -54,7 +54,14 @@ then adjust. I elected to place the ReadMe documentation last since it is easier
 allows for more flexibility.
 
 ## Approach
-A couple of paragraphs about the general approach you took.
+
+The Model View Control System design is used in this application. There are 4 Models components that 
+contain the required application data, View is the component that displays and controls actions, and 
+1 Controller with 15 endpoints, is the component that connects the Model and View components of the MVC. 
+The service component was also used and together executed the separation of concerns technique. 
+Because of its reusability, it aids in efficient application testing throughout the testing process and 
+provides for cleaner code.
+
 
 ## Obstacles
 Descriptions of any unsolved problems or major hurdles you had to overcome.
