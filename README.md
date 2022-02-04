@@ -26,6 +26,7 @@ have developed, and to view the different seasons.
 
 
 ## Entity relationship diagram (ERD) Diagrams
+![](/Users/rookmac/sei/projects/Project2/images/FashionArchiveUpdatedERD.png)
 
 ## Endpoints
 
@@ -49,7 +50,7 @@ have developed, and to view the different seasons.
 
 ## Planning
 
-![Screen Shot 2022-02-03 at 8.55.17 PM.png](/Users/rookmac/Desktop/Screen Shot 2022-02-03 at 8.55.17 PM.png)
+![](/Users/rookmac/sei/projects/Project2/images/FashionArchivePlanning.png)
 The process of developing this application began with me pondering challenges related 
 to topics that I am passionate about. The next stage was to determine how to resolve
 the problem. I was able to picture how the app design and functionality by starting with 
