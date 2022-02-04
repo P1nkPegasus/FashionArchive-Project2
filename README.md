@@ -15,7 +15,6 @@ have developed, and to view the different seasons.
 
 
 ## Entity relationship diagram (ERD) Diagrams
-A link ERD diagrams —
 
 ## Endpoints
 
@@ -61,12 +60,17 @@ A couple of paragraphs about the general approach you took.
 Descriptions of any unsolved problems or major hurdles you had to overcome.
 
 ## Tools
-Explanations of the machineries used.
 
-## Dependencies
-Installation instructions for any dependencies.
+| 1.  | Spring Boot |
+|-----|-------------|
+| 2.  | Maven       |
+| 3.  | Postman     |
+| 4.  | Lucid       |
 
 
+[//]: # (## Dependencies)
+
+[//]: # (Installation instructions for any dependencies.)
 
 [//]: # (15 )
 
