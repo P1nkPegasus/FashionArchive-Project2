@@ -1,4 +1,4 @@
-# Fashion Archive
+# The Fashion Archive
 
  
 ## Intent
@@ -13,7 +13,7 @@ to engage with designers or those simply intrigued by fashion. Users may use thi
 to identify black designers, what companies they have partnered with, what pieces they
 have developed, and to view the different seasons.
 
-## UserStories
+## User Stories
 
 | 1   | As a user, I would like to select a designer and see companies they collaborated with. |
 |-----|----------------------------------------------------------------------------------------|
@@ -75,7 +75,13 @@ provides for cleaner code.
 
 
 ## Obstacles
-Descriptions of any unsolved problems or major hurdles you had to overcome.
+Many complications will arise as a result of a concept. This project was about the process more than the destination. Many times, I had to troubleshoot code using Google or YouTube, and I occasionally reached out for assistance from my instructor. While writing and seeing identical functionality, I was able to identify bugs as well as how the application components interacted.
+
+Given so many concepts that I wanted to try, I had to decide which one I could execute with my technical capabilities. I used a whiteboard to jot down all of my ideas before landing on The Fashion Archive. The next step was to decide how I wanted to organize my project. I had the choice of selecting one of two sorts of projects: one that could handle user login and sign-up and one that could not. As a result, it prompted me to go into greater depth on the application's functionality, which would otherwise be unnecessary.
+
+A large percentage of the problems I encountered had to do with smoothly integrating the application components.
+For example, I was able to develop the controller and service classes, but when it came time to link them to the various repositories, I ran into issues. I was able to obtain a better idea of how to put it together by using the error messages, reading through the code, **a lot** of trial and error, and utilizing resources.
+
 
 ## Tools
 
