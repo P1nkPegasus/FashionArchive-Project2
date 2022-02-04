@@ -1,7 +1,7 @@
 # Fashion Archive
 
-## UserStories
-### INTENT
+ 
+## Intent
 Time and again, black designers have been passed over for partnerships,
 while their ideas have been adopted by larger fashion houses and, in some cases,
 blackballed by the industry. Designers like Dapper Dan have produced revolutionary
@@ -12,6 +12,17 @@ The goal of this app is to act as a black designers' archive for individuals wis
 to engage with designers or those simply intrigued by fashion. Users may use this app
 to identify black designers, what companies they have partnered with, what pieces they
 have developed, and to view the different seasons.
+
+## UserStories
+
+| 1   | As a user, I would like to select a designer and see companies they collaborated with. |
+|-----|----------------------------------------------------------------------------------------|
+| 2   | As a user, I would like to select a designer and see the pieces they made.             |
+| 3   | As a user, I want to view all designers.                                               |
+| 4   | As a user, I want to view all pieces.                                                  |
+| 5   | As a user, I want to view all collaborations.                                          |
+| 6   | As a user, I want to view all seasons.                                                 |
+|     |                                                                                        |
 
 
 ## Entity relationship diagram (ERD) Diagrams
