@@ -1,6 +1,7 @@
 # The Fashion Archive
 
- 
+ ![](https://trappedmagazine.com/wp-content/uploads/2018/07/https_2F2Fhypebeast.com2Fimage2F20182F052Fgucci-dapper-dan-collection-32.jpg)
+ Photography: Hypebeast
 ## Intent
 Time and again, black designers have been passed over for partnerships,
 while their ideas have been adopted by larger fashion houses and, in some cases,
