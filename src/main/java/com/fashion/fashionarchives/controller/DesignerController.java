@@ -122,6 +122,12 @@ import java.util.Optional;
         return designerService.updateDesignerPiece(designerId, pieceId, pieceObject);
     }
 
+    @DeleteMapping("/designers/{designerId}/pieces/{pieceId}")
+    public void deleteDesignerPiece(@PathVariable(value = "designerId") Long designerId,
+                                      @PathVariable(value = "pieceId") Long pieceId) {
+        System.out.println("calling deleteDesignerPiece");
+        designerService.deleteDesignerPiece(designerId, pieceId);
+    }
 
 }
 
