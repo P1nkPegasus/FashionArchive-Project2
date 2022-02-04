@@ -1,13 +1,13 @@
 # Fashion Archive
 
 
-#Tools 
+## Tools 
 Explanations of the machineries used.
 
-##Approach
+## Approach
 A couple of paragraphs about the general approach you took.
 
-##Obstacles
+## Obstacles
 Descriptions of any unsolved problems or major hurdles you had to overcome.
 
 ## Planning
@@ -16,13 +16,13 @@ A link to your planning documentation for how you broke down this project with d
 ## Dependencies
 Installation instructions for any dependencies.
 
-##UserStories
+## UserStories
 who are your users, what do they want, and why?
 
-##ERD Diagrams
+## Entity relationship diagram (ERD) Diagrams
 A link ERD diagrams — 
 
-##Endpoints 
+## Endpoints 
 
 | REQUEST TYPE | URL                                             | REQUEST BODY   |
 |--------------|-------------------------------------------------|----------------|
